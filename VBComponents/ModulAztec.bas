@@ -247,7 +247,7 @@ For i = 0 To UBound(k) Step 3 ' check range
     If ch > k(i) And ch < k(i + 1) Then Exit For
 Next i
 If i <= UBound(k) Then modeOf = ch + k(i + 2): Exit Function ' ch in range
-i = InStr("@\^_'|~¦[]{}", Chr(ch))
+i = InStr("@\^_'|~Â¦[]{}", Chr(ch))
 modeOf = IIf(i = 0, -1, IIf(i < 9, 20 + 64, 27 + 96 - 8) + i - 1) ' binary/mixed/punct
 End Function
 
