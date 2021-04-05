@@ -1,4 +1,4 @@
-Attribute VB_Name = "ModulQRcode"
+Attribute VB_Name = "modQRcode"
 Option Explicit
 Dim mat() As Byte ' matrix of QR
 
