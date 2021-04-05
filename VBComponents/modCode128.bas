@@ -1,4 +1,4 @@
-Attribute VB_Name = "ModulCode128"
+Attribute VB_Name = "modCode128"
 Option Explicit
 
 ' Code 128 symbol creation according ISO/IEC 15417:2007
