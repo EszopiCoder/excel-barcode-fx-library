@@ -1,0 +1,41 @@
+<customUI xmlns="http://schemas.microsoft.com/office/2009/07/customui">
+   <ribbon>
+      <tabs>
+         <tab idMso="TabFormulas">
+            <group id="BarcodeLib" label="Barcode Function Library">
+               <gallery id="Barcode"
+                   label="Barcode Functions" columns="1"
+                   imageMso = "GroupFunctionLibrary"
+                   getItemCount = "Barcode_getItemCount"
+                   getItemLabel = "Barcode_getItemLabel"
+                   getItemScreentip = "Barcode_getItemScreentip"
+                   getItemSupertip = "Barcode_getItemSupertip"
+                   onAction = "Barcode_Click"
+                   showItemLabel = "true"
+                   size="large">
+                 <button id="insertFx"
+                    imageMso = "GroupFunctionLibrary"
+                    label = "Insert Function"
+                    screentip="Insert Function (Shift+F3)"
+                    supertip = "Work with the formula in the current cell. You can easily pick functions to use and get help on how to fill out the input values."
+                    onAction="insertFx_Click"/>
+               </gallery>
+               <button id="updateBarcodes"
+                   imageMso = "ConnectedToolSyncMenu"
+                   label = "Update Barcodes"
+                   screentip="Update Barcodes"
+                   supertip = "Update all barcodes in current workbook."
+                   onAction = "updateBarcodes_Click"
+                   size="large"/>
+               <button id="getHelp"
+                   imageMso = "Help"
+                   label = "Help"
+                   screentip="Help"
+                   supertip = "Open link to webpage."
+                   onAction = "getHelp_Click"
+                   size="large"/>
+            </group>
+         </tab>
+      </tabs>
+   </ribbon>
+</customUI>
