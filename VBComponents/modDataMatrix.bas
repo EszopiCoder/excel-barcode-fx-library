@@ -1,4 +1,4 @@
-Attribute VB_Name = "ModulDataMatrix"
+Attribute VB_Name = "modDataMatrix"
 Option Explicit
 
 '   creates Data Matrix barcode symbol as shape in Excel cell.
