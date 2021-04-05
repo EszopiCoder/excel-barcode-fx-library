@@ -1,4 +1,4 @@
-Attribute VB_Name = "ModulAztec"
+Attribute VB_Name = "modAztec"
 Option Explicit
 Dim typ As Long, enc(1665) As Integer
 Dim md As Long, eb As Long, el As Long, b As Long
