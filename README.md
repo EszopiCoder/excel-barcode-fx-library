@@ -14,13 +14,13 @@ Microsoft Excel 2013+
 ## Usage
 - The functions are located under the 'Formulas' tab under the 'Barcode Function Library' group (see images).
 
-| Function Name | Documentation | Author |
-| --- | --- | --- |
-| `Aztec()` | [Link](http://members.chello.at/~easyfilter/barcode.html) | Alois Zingl |
-| `Code128()` | [Link](http://members.chello.at/~easyfilter/barcode.html) | Alois Zingl
-| `DataMatrix()` | [Link](http://members.chello.at/~easyfilter/barcode.html) | Alois Zingl
-| `PDFIVXVII()` | [Link](http://grandzebu.net/informatique/codbar-en/pdf417.htm) | Grandzebu |
-| `QRCode()` | [Link](http://members.chello.at/~easyfilter/barcode.html) | Alois Zingl |
+| Function Name | Author |
+| --- | --- |
+| `Aztec()` | [Alois Zingl](http://members.chello.at/~easyfilter/barcode.html) |
+| `Code128()` | [Alois Zingl](http://members.chello.at/~easyfilter/barcode.html) |
+| `DataMatrix()` | [Alois Zingl](http://members.chello.at/~easyfilter/barcode.html) |
+| `PDFIVXVII()` | [Grandzebu](http://grandzebu.net/informatique/codbar-en/pdf417.htm) |
+| `QRCode()` | [Alois Zingl](http://members.chello.at/~easyfilter/barcode.html) |
 ## Sample Images
 <img src="Images/BarcodeFxMenu.PNG">
 <img src="Images/Barcode Sample.PNG">
