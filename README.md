@@ -1,11 +1,11 @@
 # Barcode Function Library Excel Add-In
 ## Purpose and Features
 Custom function library to generate the following 1D and 2D barcodes using autoshapes:
-* Aztec
-* Code 128
-* Data Matrix
-* PDF417
-* QR Code
+| Barcode Type | Barcodes |
+| --- | --- |
+| 1D Code | Code 11, Code 39, Code 93, Code 128 |
+| 1D UPC/EAN | EAN-2, EAN-5, EAN-8, EAN-13, UPC-A, UPC-E |
+| 2D Barcodes | Aztec, Data Matrix, PDF417, QR Code |
 ## Compatibility
 Microsoft Excel 2013+
 ## Installation
@@ -14,13 +14,20 @@ Microsoft Excel 2013+
 ## Usage
 - The functions are located under the 'Formulas' tab under the 'Barcode Function Library' group (see images).
 
-| Function Name | Author |
-| --- | --- |
-| `Aztec()` | [Alois Zingl](http://members.chello.at/~easyfilter/barcode.html) |
-| `Code128()` | [Alois Zingl](http://members.chello.at/~easyfilter/barcode.html) |
-| `DataMatrix()` | [Alois Zingl](http://members.chello.at/~easyfilter/barcode.html) |
-| `PDFIVXVII()` | [Grandzebu](http://grandzebu.net/informatique/codbar-en/pdf417.htm) |
-| `QRCode()` | [Alois Zingl](http://members.chello.at/~easyfilter/barcode.html) |
+| Function Name | Data Types | Author |
+| --- | --- | --- |
+| `Aztec()` | ASCII | [Alois Zingl](http://members.chello.at/~easyfilter/barcode.html) |
+| `Code11()` | Numeric and dash | Eszopicoder |
+| `Code39()` | Alphanumeric and -$%./+ | Eszopicoder |
+| `Code93()` | Alphanumeric and -$%./+ | Eszopicoder |
+| `Code128()` | ASCII | [Alois Zingl](http://members.chello.at/~easyfilter/barcode.html) |
+| `DataMatrix()` | ASCII | [Alois Zingl](http://members.chello.at/~easyfilter/barcode.html) |
+| `EAN_2()` | Numeric | Eszopicoder |
+| `EAN_5()` | Numeric | Eszopicoder |
+| `EAN_13()` | Numeric | Eszopicoder |
+| `PDF_417()` | ASCII | [Grandzebu](http://grandzebu.net/informatique/codbar-en/pdf417.htm) |
+| `QRCode()` | ASCII | [Alois Zingl](http://members.chello.at/~easyfilter/barcode.html) |
+| `UPCA()` | Numeric | Eszopicoder |
+| `UPCE()` | Numeric | Eszopicoder |
 ## Sample Images
-<img src="Images/BarcodeFxMenu.PNG">
 <img src="Images/Barcode Sample.PNG">
