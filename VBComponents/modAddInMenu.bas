@@ -48,14 +48,16 @@ Dim BarcodeList As Variant
 
 Private Sub AddInMenuProperties()
     ' Custom function for changing file properties (not used during run time)
-    ActiveWorkbook.BuiltinDocumentProperties("Title").Value = "Barcode Fx 1.0"
+    ActiveWorkbook.BuiltinDocumentProperties("Title").Value = "Barcode Fx 2.0"
     ActiveWorkbook.BuiltinDocumentProperties("Comments").Value = "Function library for barcodes"
 End Sub
 
 Sub Auto_Open()
 
     ' Populate BarcodeList
-    BarcodeList = Array("Aztec()", "Code128()", "DataMatrix()", "PDFIVXVII()", "QRCode()")
+    BarcodeList = Array("Aztec()", "Code11()", "Code39()", "Code93()", "Code128()", _
+                        "DataMatrix()", "EAN_2()", "EAN_5()", "EAN_13()", _
+                        "PDF_417()", "QRCode()", "UPCA()", "UPCE()")
 
 End Sub
 
@@ -66,7 +68,7 @@ Sub updateBarcodes_Click(control As IRibbonControl)
     For Each shp In ActiveSheet.Shapes ' delete all lost barcode shapes
         If shp.Type = msoGroup Then
             str = LCase(shp.AlternativeText)
-            For Each bc In Array("aztec", "code128", "datamatrix", "pdf417", "quickresponse barcode")
+            For Each bc In Array("aztec", "code128", "datamatrix", "pdf417", "quickresponse barcode", "linear barcode")
                 If Left(str, Len(bc)) = bc Then
                     shp.Title = "" ' force redraw
                     If InStr(LCase(Range(shp.Name).Formula), bc) = 0 Then shp.Delete
@@ -117,10 +119,18 @@ Sub Barcode_getItemSupertip(control As IRibbonControl, index As Integer, ByRef r
     Dim Supertip As Variant
     Supertip = _
     Array("Draw Aztec barcode.", _
+        "Draw Code 11 barcode.", _
+        "Draw Code 39 barcode.", _
+        "Draw Code 93 barcode.", _
         "Draw Code 128 barcode.", _
         "Draw DataMatrix barcode.", _
+        "Draw EAN-2 barcode.", _
+        "Draw EAN-5 barcode.", _
+        "Draw EAN-13 barcode.", _
         "Draw PDF417 barcode.", _
-        "Draw QR code.")
+        "Draw QR code.", _
+        "Draw UPC-A or EAN-8 barcode.", _
+        "Draw UPC-E barcode.")
 
     On Error Resume Next
     returnedVal = Supertip(index)
@@ -147,4 +157,3 @@ Sub Barcode_Click(control As IRibbonControl, id As String, index As Integer)
     End If
     On Error GoTo 0
 End Sub
-
