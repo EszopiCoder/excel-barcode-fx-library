@@ -7,12 +7,10 @@ Dim strTest As String
 strTest = PDF417String("test", -1, 1)
 'Debug.Print strTest
 Debug.Print PDF417ToBinary(strTest)(0)
-Call PDFIVXVII("test")
+Call PDF_417("test")
 End Sub
 
-Public Function PDFIVXVII(text As String, Optional security = -1, Optional nbcol = 1, Optional CodeErr) As String
-Attribute PDFIVXVII.VB_Description = "Draw PDF417 barcode."
-Attribute PDFIVXVII.VB_ProcData.VB_Invoke_Func = " \n20"
+Public Function PDF_417(text As String, Optional security = -1, Optional nbcol = 1, Optional CodeErr) As String
 On Error GoTo failed
 If Not TypeOf Application.Caller Is Range Then Err.Raise 513, "PDF417", "Call only from sheet"
 Dim h As Long, w As Long, x As Long, y As Long
@@ -37,7 +35,7 @@ h = UBound(BinPDF417)
 w = Len(BinPDF417(0))
 
 With Application.Caller.Parent.Shapes
-    K = .Count + 1 ' layout PDF417
+    K = .count + 1 ' layout PDF417
     For y = 0 To h
         For x = 1 To w
             If Mid(BinPDF417(y), x, 1) = 1 Then ' apply mask
@@ -45,9 +43,9 @@ With Application.Caller.Parent.Shapes
             End If
         Next x
     Next y
-    K = .Count - K
+    K = .count - K
     ReDim shps(K) As Integer   ' group all shapes
-    For i = .Count To 1 Step -1
+    For i = .count To 1 Step -1
         If .Range(i).Name = Application.Caller.Address Then
             shps(K) = i: K = K - 1
             If K < 0 Then Exit For
@@ -71,5 +69,5 @@ With Application.Caller.Parent.Shapes
     End With
 End With
 failed:
-If Err.Number Then PDFIVXVII = "ERROR PDF417: " & Err.Description
+If Err.Number Then PDF_417 = "ERROR PDF417: " & Err.Description
 End Function
