@@ -68,3 +68,76 @@ If k1 = "" Then  ' not found, get from file
     End If
 End If
 End Sub
+
+Public Function DRAWLINEAR(barcode As String) As String
+    On Error GoTo failed
+    If Not TypeOf Application.Caller Is Range Then Err.Raise 513, "Linear Barcode", "Call only from sheet"
+    Dim i, j, K As Integer
+    Dim x As Integer
+    Dim shp As Shape, color As Long, txt As String ' redraw barcode ?
+    color = vbBlack
+    For Each shp In Application.Caller.Parent.Shapes
+        If shp.Name = Application.Caller.Address Then
+            If shp.Title = barcode Then Exit Function ' same as prev ?
+            color = shp.Fill.ForeColor.RGB ' redraw with same color
+            shp.line.Visible = msoFalse
+            shp.Delete
+        End If
+    Next shp
+    
+    'Validate barcode
+    If IsNumeric(barcode) = False Then
+        DRAWLINEAR = barcode
+        Exit Function
+    End If
+    
+    With Application.Caller.Parent.Shapes
+        K = .count + 1
+        x = 0
+        For i = 1 To Len(barcode) Step 1
+            If i Mod 2 <> 0 Then
+                .AddShape(msoShapeRectangle, x, 1, Mid(barcode, i, 1), 1).Name = Application.Caller.Address
+            End If
+            x = x + Mid(barcode, i, 1)
+        Next i
+        K = .count - K
+        ReDim shps(K) As Integer   ' group all shapes
+        For j = .count To 1 Step -1
+            If .Range(j).Name = Application.Caller.Address Then
+                shps(K) = j: K = K - 1
+                If K < 0 Then Exit For
+            End If
+        Next j
+        
+        With .Range(shps).Group
+            .Fill.ForeColor.RGB = color ' format barcode shape
+            .line.Visible = msoFalse
+            .Width = Application.Caller.MergeArea.Width * (calcModules(barcode) - 18) / calcModules(barcode) ' fit symbol in excel cell with padding
+            .Height = Application.Caller.MergeArea.Height
+            .Left = Application.Caller.Left + (Application.Caller.MergeArea.Width - .Width) / 2
+            .Top = Application.Caller.Top
+            .Name = Application.Caller.Address ' link shape to data
+            .Title = barcode
+            .AlternativeText = "Linear barcode, " & calcModules(barcode) & " modules"
+            .LockAspectRatio = True
+            .Placement = xlMove
+        End With
+        
+    End With
+    
+failed:
+    If Err.Number Then DRAWLINEAR = "ERROR DRAWLINEAR: " & Err.Description
+End Function
+
+Private Function calcModules(source As String) As Long
+    Dim i As Long
+    Dim count As Long
+    
+    count = 0
+    For i = 1 To Len(source) Step 1
+        count = count + Int(Mid(source, i, 1))
+    Next i
+    
+    calcModules = count
+    
+End Function
