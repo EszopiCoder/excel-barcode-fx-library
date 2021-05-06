@@ -173,7 +173,7 @@ Attribute EAN_13.VB_ProcData.VB_Invoke_Func = " \n20"
     
     'Validate source
     If Len(source) > 13 Or Len(source) < 12 Then
-        EAN_13 = "Improper UPC-A barcode length (11-12 digits)"
+        EAN_13 = "Improper UPC-A barcode length (12-13 digits)"
         Exit Function
     ElseIf Len(source) = 13 And GS1_CHECK(Left(source, 12)) <> Right(source, 1) Then
         EAN_13 = "Invalid check digit (" & GS1_CHECK(Left(source, 12)) & ")"
