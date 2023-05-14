@@ -48,7 +48,7 @@ Dim BarcodeList As Variant
 
 Private Sub AddInMenuProperties()
     ' Custom function for changing file properties (not used during run time)
-    ActiveWorkbook.BuiltinDocumentProperties("Title").Value = "Barcode Fx 2.0"
+    ActiveWorkbook.BuiltinDocumentProperties("Title").Value = "Barcode Fx 3.0"
     ActiveWorkbook.BuiltinDocumentProperties("Comments").Value = "Function library for barcodes"
 End Sub
 
