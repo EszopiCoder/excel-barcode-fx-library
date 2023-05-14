@@ -5,6 +5,7 @@ Custom function library to generate the following 1D and 2D barcodes using autos
 | --- | --- |
 | 1D Code | Code 11, Code 39, Code 93, Code 128 |
 | 1D UPC/EAN | EAN-2, EAN-5, EAN-8, EAN-13, UPC-A, UPC-E |
+| 1D ITF | ITF, ITF-14 |
 | 2D Barcodes | Aztec, Data Matrix, PDF417, QR Code |
 ## Compatibility
 Microsoft Excel 2013+
@@ -26,6 +27,8 @@ Microsoft Excel 2013+
 | `EAN_2()` | Numeric | 2 digits | Eszopicoder |
 | `EAN_5()` | Numeric | 5 digits | Eszopicoder |
 | `EAN_13()` | Numeric | 12 digits + check digit | Eszopicoder |
+| `ITF()` | Numeric | Unlimited | Eszopicoder |
+| `ITF_14()` | Numeric | 13 digits + check digit | Eszopicoder |
 | `PDF_417()` | ASCII | Unlimited | [Grandzebu](http://grandzebu.net/informatique/codbar-en/pdf417.htm) |
 | `QRCode()` | ASCII | Unlimited | [Alois Zingl](http://members.chello.at/~easyfilter/barcode.html) |
 | `UPCA()` | Numeric | 11 + check digit (UPC-A) or 8 digits (EAN-8) | Eszopicoder |
