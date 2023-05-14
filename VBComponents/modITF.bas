@@ -53,6 +53,9 @@ Function ITF_14(source As String) As String
         Exit Function
     End If
     
+    'Calculate check digit
+    If Len(source) = 13 Then source = source & GS1_CHECK(Left(source, 13))
+    
     'Start character
     dest = "1111"
     'Middle characters
