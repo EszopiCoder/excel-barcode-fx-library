@@ -56,8 +56,8 @@ Sub Auto_Open()
 
     ' Populate BarcodeList
     BarcodeList = Array("Aztec()", "Code11()", "Code39()", "Code93()", "Code128()", _
-                        "DataMatrix()", "EAN_2()", "EAN_5()", "EAN_13()", _
-                        "PDF_417()", "QRCode()", "UPCA()", "UPCE()")
+                        "DataMatrix()", "EAN_2()", "EAN_5()", "EAN_13()", "ITF()", _
+                        "ITF_14()", "PDF_417()", "QRCode()", "UPCA()", "UPCE()")
 
 End Sub
 
@@ -127,6 +127,8 @@ Sub Barcode_getItemSupertip(control As IRibbonControl, index As Integer, ByRef r
         "Draw EAN-2 barcode.", _
         "Draw EAN-5 barcode.", _
         "Draw EAN-13 barcode.", _
+        "Draw ITF barcode.", _
+        "Draw ITF-14 barcode.", _
         "Draw PDF417 barcode.", _
         "Draw QR code.", _
         "Draw UPC-A or EAN-8 barcode.", _
