@@ -10,7 +10,7 @@ Custom function library to generate the following 1D and 2D barcodes using autos
 ## Compatibility
 Microsoft Excel 2013+
 ## Installation
-1. Download 'Barcode Fx Library Add-In 1.0.xlam'
+1. Download 'Barcode Fx Library Add-In 3.0.xlam'
 2. Follow these [instructions](https://support.office.com/en-us/article/add-or-remove-add-ins-in-excel-0af570c4-5cf3-4fa9-9b88-403625a0b460) from Microsoft
 ## Usage
 - The functions are located under the 'Formulas' tab under the 'Barcode Function Library' group (see images).
