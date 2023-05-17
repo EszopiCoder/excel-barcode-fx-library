@@ -42,6 +42,12 @@ Private Sub App_WorkbookActivate(ByVal Wb As Workbook)
     
     Application.MacroOptions "DataMatrix", "Draw DataMatrix barcode.", , , , , "Barcode", , , , _
         Array("Text to be encoded.")
+
+    Application.MacroOptions "ITF", "Encode ITF barcode.", , , , , "Barcode", , , , _
+        Array("Text to be encoded.")
+        
+    Application.MacroOptions "ITF_14", "Encode ITF-14 barcode.", , , , , "Barcode", , , , _
+        Array("Text to be encoded.")
     
     Application.MacroOptions "PDF_417", "Draw PDF417 barcode.", , , , , "Barcode", , , , _
         Array("Text to be encoded.", _
